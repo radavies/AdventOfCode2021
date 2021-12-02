@@ -1,7 +1,7 @@
-from pathlib import Path
+from utils import read_input
 
 
-class DecemberFirst:
+class First:
 
     debug = False
     depth_list = []
@@ -9,8 +9,9 @@ class DecemberFirst:
     def __init__(self, debug):
         self.debug = debug
         self.depth_list = self.get_depth_array()
+        print("---- First Challenge ----")
 
-    def question_one(self):
+    def one(self):
         counter = 0
         previous = 0
         larger_counter = 0
@@ -21,10 +22,10 @@ class DecemberFirst:
             counter += 1
             previous = depth
 
-        print(larger_counter)
-        print(counter)
+        print("-- Part One --")
+        print('Answer: {}\n'.format(larger_counter))
 
-    def question_two(self):
+    def two(self):
 
         counter = 0
         larger_counter = 0
@@ -40,7 +41,8 @@ class DecemberFirst:
 
             counter += 1
 
-        print(larger_counter)
+        print("-- Part Two --")
+        print('Answer: {}\n'.format(larger_counter))
 
     def get_window_total(self, start_index):
         if len(self.depth_list) < start_index + 3:
@@ -53,17 +55,4 @@ class DecemberFirst:
         return window_total
 
     def get_depth_array(self):
-        folder = Path("inputs")
-
-        if self.debug:
-            file = folder / "day1test.txt"
-        else:
-            file = folder / "day1input1.txt"
-
-        data = open(file)
-        depth_list = []
-        for line in data:
-            depth_list.append(int(line))
-        data.close()
-
-        return depth_list
+        return read_input(self.debug, 1, int)

@@ -1,14 +1,21 @@
-from DecemberFirst import DecemberFirst
-from DecemberSecond import DecemberSecond
+from first import First
+from second import Second
+
 
 def start(debug):
-    #first = DecemberFirst(debug)
-    #first.question_one()
-    #first.question_two()
+    first(debug)
+    second(debug)
 
-    second = DecemberSecond(debug)
-    #second.one()
-    second.two()
+def first(debug):
+    challenge = First(debug)
+    challenge.one()
+    challenge.two()
+
+
+def second(debug):
+    challenge = Second(debug)
+    challenge.one()
+    challenge.two()
 
 
 if __name__ == '__main__':

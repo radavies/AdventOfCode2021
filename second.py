@@ -1,7 +1,7 @@
-from pathlib import Path
+from utils import read_input
 
 
-class DecemberSecond:
+class Second:
 
     debug = False
     instructions = None
@@ -9,6 +9,7 @@ class DecemberSecond:
     def __init__(self, debug):
         self.debug = debug
         self.instructions = self.get_instructions()
+        print("---- Second Challenge ----")
 
     def one(self):
 
@@ -24,9 +25,8 @@ class DecemberSecond:
                 else:
                     depth += instruction[1]
 
-        print(horizontal_pos)
-        print(depth)
-        print(horizontal_pos * depth)
+        print("-- Part One --")
+        print('Answer: {}\n'.format(horizontal_pos * depth))
 
     def two(self):
         horizontal_pos = 0
@@ -43,23 +43,13 @@ class DecemberSecond:
                 else:
                     aim += instruction[1]
 
-        print(horizontal_pos)
-        print(depth)
-        print(horizontal_pos * depth)
+        print("-- Part Two --")
+        print('Answer: {}\n'.format(horizontal_pos * depth))
 
     def get_instructions(self):
-        folder = Path("inputs")
+        return read_input(self.debug, 2, self.line_function)
 
-        if self.debug:
-            file = folder / "day2test.txt"
-        else:
-            file = folder / "day2.txt"
-
-        data = open(file)
-        instructions = []
-        for line in data:
-            split = str.split(line, " ")
-            instructions.append([split[0], int(split[1])])
-        data.close()
-
-        return instructions
+    @staticmethod
+    def line_function(line):
+        split = str.split(line, " ")
+        return [split[0], int(split[1])]
