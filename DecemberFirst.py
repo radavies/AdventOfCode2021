@@ -56,7 +56,7 @@ class DecemberFirst:
         folder = Path("inputs")
 
         if self.debug:
-            file = folder / "test.txt"
+            file = folder / "day1test.txt"
         else:
             file = folder / "day1input1.txt"
 
