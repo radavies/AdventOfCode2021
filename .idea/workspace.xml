@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13989d76-19fa-40cb-bf24-3acf1660af85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inputs/test3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/AdventOfCode2021.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AdventOfCode2021.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DecemberFirst.py" beforeDir="false" afterPath="$PROJECT_DIR$/first.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DecemberSecond.py" beforeDir="false" afterPath="$PROJECT_DIR$/second.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs/day1input1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inputs/1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs/day1test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inputs/test1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs/day2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inputs/2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs/day2test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inputs/test2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,9 +55,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -102,5 +97,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AdventOfCode2021$main.coverage" NAME="main Coverage Results" MODIFIED="1638533575749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

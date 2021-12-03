@@ -1,10 +1,13 @@
 from first import First
 from second import Second
+from third import Third
 
 
 def start(debug):
     first(debug)
     second(debug)
+    third(debug)
+
 
 def first(debug):
     challenge = First(debug)
@@ -14,6 +17,12 @@ def first(debug):
 
 def second(debug):
     challenge = Second(debug)
+    challenge.one()
+    challenge.two()
+
+
+def third(debug):
+    challenge = Third(debug)
     challenge.one()
     challenge.two()
 
