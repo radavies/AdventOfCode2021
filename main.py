@@ -2,6 +2,7 @@ from first import First
 from second import Second
 from third import Third
 from forth import Forth
+from fifth import Fifth
 
 
 def start(debug):
@@ -9,6 +10,7 @@ def start(debug):
     second(debug)
     third(debug)
     forth(debug)
+    fifth(debug)
 
 
 def first(debug):
@@ -31,6 +33,12 @@ def third(debug):
 
 def forth(debug):
     challenge = Forth(debug)
+    challenge.one()
+    challenge.two()
+
+
+def fifth(debug):
+    challenge = Fifth(debug)
     challenge.one()
     challenge.two()
 
