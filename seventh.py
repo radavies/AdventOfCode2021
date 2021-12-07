@@ -24,7 +24,7 @@ class Seventh:
     def two(self):
         final_fuel_spend = -1
         complete_sequence = self.get_complete_sequence()
-        print(len(complete_sequence))
+
         for place_to_move_to in complete_sequence:
             total_fuel_spent = 0
             for sub in self.subs:
