@@ -39,6 +39,37 @@ class Seventh:
         print("-- Part Two --")
         print('Answer: {}\n'.format(final_fuel_spend))
 
+    def better_two(self):
+
+        starting_point = int(statistics.mean(self.subs))
+        final_fuel_spend = self.get_fuel_score(starting_point)
+        found_lowest = False
+
+        counter = 1
+        while not found_lowest:
+            low_score = self.get_fuel_score(starting_point - counter)
+            high_score = self.get_fuel_score(starting_point + counter)
+
+            if low_score < final_fuel_spend or high_score < final_fuel_spend:
+                final_fuel_spend = low_score if low_score < high_score else high_score
+                counter += 1
+            else:
+                found_lowest = True
+
+        print("-- Part Two (better) --")
+        print('Answer: {}\n'.format(final_fuel_spend))
+
+    def get_fuel_score(self, place_to_move_to):
+        total_fuel_spent = 0
+        for sub in self.subs:
+            places_moved = abs(sub - place_to_move_to)
+            fuel_spent = 0
+            for x in range(1, places_moved + 1):
+                fuel_spent += (1 * x)
+            total_fuel_spent += fuel_spent
+
+        return total_fuel_spent
+
     def get_complete_sequence(self):
         sequence = list(dict.fromkeys(self.subs))
         numbers_to_add = []

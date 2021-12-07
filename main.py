@@ -56,7 +56,8 @@ def sixth(debug):
 def seventh(debug):
     challenge = Seventh(debug)
     challenge.one()
-    challenge.two()
+    # challenge.two()
+    challenge.better_two()
 
 
 if __name__ == '__main__':
