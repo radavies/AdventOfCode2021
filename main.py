@@ -4,6 +4,7 @@ from third import Third
 from forth import Forth
 from fifth import Fifth
 from sixth import Sixth
+from seventh import Seventh
 
 
 def start(debug):
@@ -13,6 +14,7 @@ def start(debug):
     forth(debug)
     fifth(debug)
     sixth(debug)
+    seventh(debug)
 
 
 def first(debug):
@@ -47,6 +49,12 @@ def fifth(debug):
 
 def sixth(debug):
     challenge = Sixth(debug)
+    challenge.one()
+    challenge.two()
+
+
+def seventh(debug):
+    challenge = Seventh(debug)
     challenge.one()
     challenge.two()
 
