@@ -5,6 +5,7 @@ from forth import Forth
 from fifth import Fifth
 from sixth import Sixth
 from seventh import Seventh
+from eighth import Eighth
 
 
 def start(debug):
@@ -15,6 +16,7 @@ def start(debug):
     fifth(debug)
     sixth(debug)
     seventh(debug)
+    eighth(debug)
 
 
 def first(debug):
@@ -58,6 +60,12 @@ def seventh(debug):
     challenge.one()
     # challenge.two()
     challenge.better_two()
+
+
+def eighth(debug):
+    challenge = Eighth(debug)
+    challenge.one()
+    challenge.two()
 
 
 if __name__ == '__main__':
