@@ -14,16 +14,6 @@ class SevenSegment:
             9: None
         }
 
-        self.display = {
-            "top": None,
-            "top left": None,
-            "top right": None,
-            "middle": None,
-            "bottom left": None,
-            "bottom right": None,
-            "bottom": None
-        }
-
         self.six_nine_or_zero = []
         self.two_three_or_five = []
 
