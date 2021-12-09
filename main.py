@@ -6,6 +6,7 @@ from fifth import Fifth
 from sixth import Sixth
 from seventh import Seventh
 from eighth import Eighth
+from ninth import Ninth
 
 
 def start(debug):
@@ -17,6 +18,7 @@ def start(debug):
     sixth(debug)
     seventh(debug)
     eighth(debug)
+    ninth(debug)
 
 
 def first(debug):
@@ -64,6 +66,12 @@ def seventh(debug):
 
 def eighth(debug):
     challenge = Eighth(debug)
+    challenge.one()
+    challenge.two()
+
+
+def ninth(debug):
+    challenge = Ninth(debug)
     challenge.one()
     challenge.two()
 
