@@ -10,21 +10,23 @@ from ninth import Ninth
 from tenth import Tenth
 from eleventh import Eleventh
 from twelfth import Twelfth
+from thirteenth import Thirteenth
 
 
 def start(debug):
-    first(debug)
-    second(debug)
-    third(debug)
-    forth(debug)
-    fifth(debug)
-    sixth(debug)
-    seventh(debug)
-    eighth(debug)
-    ninth(debug)
-    tenth(debug)
-    eleventh(debug)
-    twelfth(debug)
+    #first(debug)
+    #second(debug)
+    #third(debug)
+    #forth(debug)
+    #fifth(debug)
+    #sixth(debug)
+    #seventh(debug)
+    #eighth(debug)
+    #ninth(debug)
+    #tenth(debug)
+    #eleventh(debug)
+    #twelfth(debug)
+    thirteenth(debug)
 
 
 def first(debug):
@@ -100,5 +102,11 @@ def twelfth(debug):
     challenge.two()
 
 
+def thirteenth(debug):
+    challenge = Thirteenth(debug)
+    challenge.one()
+    challenge.two()
+
+
 if __name__ == '__main__':
-    start(False)
+    start(True)
