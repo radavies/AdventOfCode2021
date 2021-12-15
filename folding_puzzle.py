@@ -68,57 +68,93 @@ class FoldingPuzzle:
         if fold_command[0] == 'x':
             for y in range(0, len(self.dot_map)):
                 self.dot_map[y][fold_command[1]] = '-'
-            self.do_x_fold_translation(print_fold_maps, fold_command[1])
+
+            left = fold_command[1] - 1
+            right = (len(self.dot_map[0]) - 1) - fold_command[1] - 1
+            self.do_x_fold_translation(print_fold_maps, fold_command[1], left < right)
         else:
             for x in range(0, len(self.dot_map[fold_command[1]])):
                 self.dot_map[fold_command[1]][x] = '-'
-            self.do_y_fold_translation(print_fold_maps, fold_command[1])
 
-    def do_y_fold_translation(self, print_fold_maps, fold_at):
-        translated_y = 0
+            top = fold_command[1] - 1
+            bottom = (len(self.dot_map) - 1) - fold_command[1] - 1
+            self.do_y_fold_translation(print_fold_maps, fold_command[1], top < bottom)
 
-        new_map = self.create_new_dot_map_for_y_fold(fold_at)
-
-        if print_fold_maps:
-            self.print_map(None)
-
-        for y in reversed(range(fold_at, len(self.dot_map))):
-            for x in range(0, len(self.dot_map[0])):
-                if self.dot_map[y][x] == '#' and new_map[translated_y][x] != '#':
-                    new_map[translated_y][x] = '#'
-            translated_y += 1
-        self.dot_map = new_map
-
-    def do_x_fold_translation(self, print_fold_maps, fold_at):
-        new_map = self.create_new_dot_map_for_x_fold(fold_at)
+    def do_y_fold_translation(self, print_fold_maps, fold_at, flip_fold):
+        new_map = self.create_new_dot_map_for_y_fold(fold_at, flip_fold)
 
         if print_fold_maps:
             self.print_map(None)
 
-        for y in range(0, len(self.dot_map)):
-            translated_x = 0
-            for x in reversed(range(fold_at, len(self.dot_map[0]))):
-                if self.dot_map[y][x] == '#' and new_map[y][translated_x] != '#':
-                    new_map[y][translated_x] = '#'
-                translated_x += 1
+        if flip_fold:
+            translated_y = fold_at - 1
+            for y in range(0, fold_at):
+                for x in range(0, len(self.dot_map[0])):
+                    if self.dot_map[y][x] == '#' and new_map[translated_y][x] != '#':
+                        new_map[translated_y][x] = '#'
+                translated_y -= 1
+        else:
+            translated_y = 0
+            for y in reversed(range(fold_at, len(self.dot_map))):
+                for x in range(0, len(self.dot_map[0])):
+                    if self.dot_map[y][x] == '#' and new_map[translated_y][x] != '#':
+                        new_map[translated_y][x] = '#'
+                translated_y += 1
+
         self.dot_map = new_map
 
-    def create_new_dot_map_for_y_fold(self, fold_at):
+    def create_new_dot_map_for_y_fold(self, fold_at, flip_fold):
         new_map = []
-        for y in range(0, fold_at):
-            new_line = []
-            for x in range(0, len(self.dot_map[0])):
-                new_line.append(self.dot_map[y][x])
-            new_map.append(new_line)
+        if flip_fold:
+            for y in range(fold_at + 1, len(self.dot_map)):
+                new_line = []
+                for x in range(0, len(self.dot_map[0])):
+                    new_line.append(self.dot_map[y][x])
+                new_map.append(new_line)
+        else:
+            for y in range(0, fold_at):
+                new_line = []
+                for x in range(0, len(self.dot_map[0])):
+                    new_line.append(self.dot_map[y][x])
+                new_map.append(new_line)
         return new_map
 
-    def create_new_dot_map_for_x_fold(self, fold_at):
+    def do_x_fold_translation(self, print_fold_maps, fold_at, flip_fold):
+        new_map = self.create_new_dot_map_for_x_fold(fold_at, flip_fold)
+
+        if print_fold_maps:
+            self.print_map(None)
+
+        if flip_fold:
+            for y in range(0, len(self.dot_map)):
+                translated_x = fold_at - 1
+                for x in range(0, fold_at):
+                    if self.dot_map[y][x] == '#' and new_map[y][translated_x] != '#':
+                        new_map[y][translated_x] = '#'
+                    translated_x -= 1
+        else:
+            for y in range(0, len(self.dot_map)):
+                translated_x = 0
+                for x in reversed(range(fold_at, len(self.dot_map[0]))):
+                    if self.dot_map[y][x] == '#' and new_map[y][translated_x] != '#':
+                        new_map[y][translated_x] = '#'
+                    translated_x += 1
+        self.dot_map = new_map
+
+    def create_new_dot_map_for_x_fold(self, fold_at, flip_fold):
         new_map = []
-        for y in range(0, len(self.dot_map)):
-            new_line = []
-            for x in range(0, fold_at):
-                new_line.append(self.dot_map[y][x])
-            new_map.append(new_line)
+        if flip_fold:
+            for y in range(0, len(self.dot_map)):
+                new_line = []
+                for x in range(fold_at + 1, len(self.dot_map[0])):
+                    new_line.append(self.dot_map[y][x])
+                new_map.append(new_line)
+        else:
+            for y in range(0, len(self.dot_map)):
+                new_line = []
+                for x in range(0, fold_at):
+                    new_line.append(self.dot_map[y][x])
+                new_map.append(new_line)
         return new_map
 
     @staticmethod
