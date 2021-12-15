@@ -10,11 +10,16 @@ class Thirteenth:
     def one(self):
 
         puzzle = FoldingPuzzle(self.debug)
+        puzzle.fold(False)
+        answer = puzzle.count_dots()
 
         print("-- Part One --")
-        print('Answer: {}\n'.format(0))
+        print('Answer: {}\n'.format(answer))
 
     def two(self):
+
         print("-- Part Two --")
-        print('Answer: {}\n'.format(0))
+        puzzle = FoldingPuzzle(self.debug)
+        puzzle.fold_to_end()
+
 
