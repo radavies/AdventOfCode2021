@@ -67,11 +67,6 @@ class Fourteenth:
             if least == -1 or score[1] < least:
                 least = score[1]
 
-        a = (most / 2)
-        b = (least / 2)
-        x = (most / 2) - (least / 2)
-        y = round(x)
-
         return round((most / 2) - (least / 2))
 
     def do_updates_to_pairs(self, changes):
@@ -105,40 +100,11 @@ class Fourteenth:
             if element_counter >= len(self.sequence):
                 break
 
-    def get_insertion(self, pair):
-        if pair in self.inserts:
-            return self.inserts[pair]
-        return None
-
     def set_up_inserts_dict(self):
         inserts_dict = {}
         for insert in self.input:
             inserts_dict[insert[0]] = insert[1]
         return inserts_dict
-
-    def set_up_sequence_for_next_round(self, new_squence_parts):
-        self.sequence = []
-        for part in new_squence_parts:
-            for element in part:
-                self.sequence.append(element)
-
-    def get_element_scores(self):
-        scores = {}
-        for element in self.sequence:
-            if element in scores:
-                scores[element] += 1
-            else:
-                scores[element] = 1
-
-        most = -1
-        least = -1
-        for score in scores.items():
-            if score[1] > most:
-                most = score[1]
-            if least == -1 or score[1] < least:
-                least = score[1]
-
-        return most - least
 
     def do_set_up(self):
         self.input = read_input(self.debug, 14, self.line_function)
