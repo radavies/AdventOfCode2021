@@ -11,6 +11,7 @@ from tenth import Tenth
 from eleventh import Eleventh
 from twelfth import Twelfth
 from thirteenth import Thirteenth
+from fourteenth import Fourteenth
 
 
 def start(debug):
@@ -26,7 +27,8 @@ def start(debug):
     #tenth(debug)
     #eleventh(debug)
     #twelfth(debug)
-    thirteenth(debug)
+    #thirteenth(debug)
+    fourteenth(debug)
 
 
 def first(debug):
@@ -108,5 +110,11 @@ def thirteenth(debug):
     challenge.two()
 
 
+def fourteenth(debug):
+    challenge = Fourteenth(debug)
+    challenge.one()
+    challenge.two()
+
+
 if __name__ == '__main__':
-    start(True)
+    start(False)
