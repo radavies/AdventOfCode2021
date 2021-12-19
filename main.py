@@ -13,6 +13,7 @@ from twelfth import Twelfth
 from thirteenth import Thirteenth
 from fourteenth import Fourteenth
 from fifteenth import Fifteenth
+from sixteenth import Sixteenth
 
 
 def start(debug):
@@ -30,7 +31,8 @@ def start(debug):
     #twelfth(debug)
     #thirteenth(debug)
     #fourteenth(debug)
-    fifteenth(debug)
+    #fifteenth(debug)
+    sixteenth(debug)
 
 
 def first(debug):
@@ -123,6 +125,12 @@ def fifteenth(debug):
     # challenge.one()
     # challenge.two()
     challenge.two_using_a_lib()
+
+
+def sixteenth(debug):
+    challenge = Sixteenth(debug)
+    challenge.one()
+    challenge.two()
 
 
 if __name__ == '__main__':
